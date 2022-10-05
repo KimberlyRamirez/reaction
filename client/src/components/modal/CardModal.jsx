@@ -1,9 +1,9 @@
-const CardModal = () => {
+const CardModal = ({ setViewModal }) => {
   return (
     <div id="modal-container">
       <div className="screen"></div>
       <div id="modal">
-        <i className="x-icon icon close-modal"></i>
+        <i className="x-icon icon close-modal" onClick={() => setViewModal(false)}></i>
         <header>
           <i className="card-icon icon .close-modal"></i>
           <textarea className="list-title" style={{ height: "45px" }}>

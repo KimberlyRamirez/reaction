@@ -1,4 +1,6 @@
-const ListCard = ({ title, labels, description, _id }) => {
+import { useState } from "react";
+
+const ListCard = ({ title, labels, description, _id, setViewModal }) => {
   return (
     <div className="card-background">
       <div className="card ">
@@ -12,7 +14,7 @@ const ListCard = ({ title, labels, description, _id }) => {
                 ></div>
               ))
             : null}
-          <p>{title}</p>
+          <p onClick={() => setViewModal(true)}>{title}</p>
         </div>
         <div className="card-icons">
           {description ? <i className="description-icon sm-icon"></i> : null}

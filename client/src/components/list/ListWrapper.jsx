@@ -2,9 +2,10 @@ import { useState } from "react";
 import ListCards from "./ListCards";
 import ToggleableAddCard from "./ToggleableAddCard";
 
-const ListWrapper = ({ title, _id, cards }) => {
+const ListWrapper = ({ title, _id, cards, setViewModal }) => {
   const listCards = cards.filter((card) => card.listId === _id);
   const [isCardActive, setIsCardActive] = useState(false);
+
   const handleToggleCardActivation = () => {
     setIsCardActive(!isCardActive);
   };
@@ -30,7 +31,7 @@ const ListWrapper = ({ title, _id, cards }) => {
               <span>...</span>
             </div>
           </div>
-          <ListCards cards={listCards} />
+          <ListCards cards={listCards} setViewModal={setViewModal}/>
           <ToggleableAddCard
             onToggleCardActivation={handleToggleCardActivation}
             isCardActive={isCardActive}
